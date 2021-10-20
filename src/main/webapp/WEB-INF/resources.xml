@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- this is to communicate with Tibco -->
+
+    <Resource id="TibcoResourceAdapter" class-name="org.jboss.resource.adapter.jms.JmsResourceAdapter">
+    </Resource>
+
+    <Resource id="TibcoConnectionFactory" class-name="org.jboss.resource.adapter.jms.JmsManagedConnectionFactory">
+        ConnectionFactory=XAGenericConnectionFactory
+        SessionDefaultType=agnostic
+        Strict=true
+        JndiParameters=java.naming.security.principal=admin;java.naming.security.credentials=password123;java.naming.factory.initial=com.tibco.tibjms.naming.TibjmsInitialContextFactory;java.naming.factory.url.pkgs=com.tibco.tibjms.naming;java.naming.provider.url=tcp://192.168.37.213:7222
+    </Resource>
+
+    <Resource id="server" type="javax.jms.Topic" class-name="com.tibco.tibjms.TibjmsTopic" constructor="name">
+        name=topic.sample
+    </Resource>
+
+    <Container id="TibcoMDBContainer" type="MESSAGE">
+        ResourceAdapter=TibcoResourceAdapter
+        ActivationSpecClass=org.jboss.resource.adapter.jms.inflow.JmsActivationSpec
+        InstanceLimit=20
+        FailOnUnknownActivationSpec=false
+        activation.connectionFactory=XAGenericConnectionFactory
+        activation.jndiParameters=java.naming.security.principal=admin;java.naming.security.credentials=password123;java.naming.factory.initial=com.tibco.tibjms.naming.TibjmsInitialContextFactory;java.naming.factory.url.pkgs=com.tibco.tibjms.naming;java.naming.provider.url=tcp://192.168.37.213:7222
+        activation.maxSession=10
+    </Container>
+
+</resources>

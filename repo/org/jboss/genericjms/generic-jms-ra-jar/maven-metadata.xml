@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jboss.genericjms</groupId>
+  <artifactId>generic-jms-ra-jar</artifactId>
+  <versioning>
+    <release>1.0.8.Final</release>
+    <versions>
+      <version>1.0.8.Final</version>
+    </versions>
+    <lastUpdated>20171019105835</lastUpdated>
+  </versioning>
+</metadata>

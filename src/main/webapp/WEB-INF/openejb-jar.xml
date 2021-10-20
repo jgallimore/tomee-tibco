@@ -1,0 +1,8 @@
+<openejb-jar>
+  <ejb-deployment ejb-name="TibcoReceiver" container-id="jms-ems-1.0-SNAPSHOT/TibcoMDBContainer">
+    <properties>
+      MdbActiveOnStartup = false
+      MdbJMXControl = true
+    </properties>
+  </ejb-deployment>
+</openejb-jar>
